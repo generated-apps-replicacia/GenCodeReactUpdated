@@ -64,53 +64,11 @@ const CreateSubscriptionForm = () => {
     setFormData({ ...formData, ...{ [key]: value } });
   };
 
-  const handleImage = async (e) => {
-    if (e.target.reportValidity()) {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      const fileName = file.name;
-      const nameParts = fileName.split('.');
-      setFileName(nameParts[0]);
-      setFileType(nameParts[1]);
-
-      reader.onload = () => {
-        const base64Image = reader.result;
-        setImageData(base64Image);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
-
   const submitForm = async () => {
           const { 
       ...otherData } = formData;
 
       try {
-        const imageResp = await makeApiCall(
-          `${BASE_URL}${PATH_DOCUMENT}`,
-          'POST',
-          imageData,
-          {
-            FileType: fileName,
-            FileName: fileType,
-          },
-          true
-        );
-
-        if (!imageResp.ok) {
-          const jsonData = await imageResp.json();
-          snackbar.enqueueSnackbar(
-            `Image upload failed - ${jsonData.message}`,
-            {
-              variant: 'error',
-            }
-          );
-          return;
-        }
-        
-        const imgResJson = await imageResp.json();
-
         const resp = await makeApiCall(
           `${BASE_URL}${PATH_SUBSCRIPTION}`,
           'POST',
