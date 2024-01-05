@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Model">
+            <EntityType HasStream="false" Name="Subscription">
+                <Key>
+                    <PropertyRef Name="sId"/>
+                </Key>
+                <Property Name="sId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Plan_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Customer_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Current_start" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Current_end" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Ended_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Quantity" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Charge_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Start_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="End_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Auth_attempts" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Total_count" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Paid_count" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Customer_notify" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Expire_by" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Short_url" Type="Edm.String" isUnique="false"/>
+                <Property Name="Has_scheduled_changes" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Change_scheduled_at" Type="Edm.String" isUnique="false"/>
+                <Property Name="Source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Payment_method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Offer_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Remaining_count" Type="Edm.Int32" isUnique="false"/>
+            </EntityType>
+            <!-- <EntityType HasStream="false" Name="Payment">
+                <Key>
+                    <PropertyRef Name="pId"/>
+                </Key>
+                <Property Name="pId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Currency" Type="Edm.String" isUnique="false"/>
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Order_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Invoice_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.String" isUnique="false"/>
+                <Property Name="Method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount_refunded" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Refund_status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Captured" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card" Type="Model.Card" isUnique="false"/>
+                <Property Name="Bank" Type="Edm.String" isUnique="false"/>
+                <Property Name="Wallet" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Email" Type="Edm.String" isUnique="false"/>
+                <Property Name="Contact" Type="Edm.String" isUnique="false"/>
+                <Property Name="Customer_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Token_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Fee" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Tax" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Error_code" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_step" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_reason" Type="Edm.String" isUnique="false"/>
+                <Property Name="Acquirer_data" Type="Edm.String" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Upi" Type="Model.Upi" isUnique="false"/>
+            </EntityType> -->
+            <EntityType HasStream="false" Name="Netbanking_Payment">
+                <Key>
+                    <PropertyRef Name="pId"/>
+                </Key>
+                <Property Name="pId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Currency" Type="Edm.String" isUnique="false"/>
+                <!-- <Property Name="Base_amount" Type="Edm.String" isUnique="false"/> -->
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Order_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Invoice_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.String" isUnique="false"/>
+                <Property Name="Method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount_refunded" Type="Edm.Int64" isUnique="false"/>
+                <!-- <Property Name="Amount_transferred" Type="Edm.Int64" isUnique="false"/> -->
+                <Property Name="Refund_status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Captured" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Bank" Type="Edm.String" isUnique="false"/>
+                <Property Name="Wallet" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Email" Type="Edm.String" isUnique="false"/>
+                <Property Name="Contact" Type="Edm.String" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Fee" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Tax" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Error_code" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_step" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_reason" Type="Edm.String" isUnique="false"/>
+                <Property Name="Acquirer_data" Type="Edm.String" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.Int64" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Card_Payment">
+                <Key>
+                    <PropertyRef Name="pId"/>
+                </Key>
+                <Property Name="pId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Currency" Type="Edm.String" isUnique="false"/>
+                <Property Name="Base_amount" Type="Edm.String" isUnique="false"/>
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Order_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Invoice_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.String" isUnique="false"/>
+                <Property Name="Method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount_refunded" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="amount_transferred" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Refund_status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Captured" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card" Type="Model.Card" isUnique="false"/>
+                <Property Name="Bank" Type="Edm.String" isUnique="false"/>
+                <Property Name="Wallet" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Email" Type="Edm.String" isUnique="false"/>
+                <Property Name="Contact" Type="Edm.String" isUnique="false"/>
+                <Property Name="Customer_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Token_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Fee" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Tax" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Error_code" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_step" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_reason" Type="Edm.String" isUnique="false"/>
+                <Property Name="Acquirer_data" Type="Edm.String" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Wallet_Payment">
+                <Key>
+                    <PropertyRef Name="pId"/>
+                </Key>
+                <Property Name="pId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Currency" Type="Edm.String" isUnique="false"/>
+                <!-- <Property Name="Base_amount" Type="Edm.String" isUnique="false"/> -->
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Order_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Invoice_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.String" isUnique="false"/>
+                <Property Name="Method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount_refunded" Type="Edm.Int64" isUnique="false"/>
+                <!-- <Property Name="Amount_transferred" Type="Edm.Int64" isUnique="false"/> -->
+                <Property Name="Refund_status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Captured" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Bank" Type="Edm.String" isUnique="false"/>
+                <Property Name="Wallet" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Email" Type="Edm.String" isUnique="false"/>
+                <Property Name="Contact" Type="Edm.String" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Fee" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Tax" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Error_code" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_step" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_reason" Type="Edm.String" isUnique="false"/>
+                <Property Name="Acquirer_data" Type="Edm.String" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.Int64" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Upi_Payment">
+                <Key>
+                    <PropertyRef Name="pId"/>
+                </Key>
+                <Property Name="pId" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Currency" Type="Edm.String" isUnique="false"/>
+                <Property Name="Base_amount" Type="Edm.String" isUnique="false"/>
+                <Property Name="Status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Order_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Invoice_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.String" isUnique="false"/>
+                <Property Name="Method" Type="Edm.String" isUnique="false"/>
+                <Property Name="Amount_refunded" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Amount_transferred" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Refund_status" Type="Edm.String" isUnique="false"/>
+                <Property Name="Captured" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Card_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Bank" Type="Edm.String" isUnique="false"/>
+                <Property Name="Wallet" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Email" Type="Edm.String" isUnique="false"/>
+                <Property Name="Contact" Type="Edm.String" isUnique="false"/>
+                <Property Name="Token_id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Notes" Type="Edm.String" isUnique="false"/>
+                <Property Name="Fee" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Tax" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Error_code" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_source" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_step" Type="Edm.String" isUnique="false"/>
+                <Property Name="Error_reason" Type="Edm.String" isUnique="false"/>
+                <Property Name="Acquirer_data" Type="Edm.String" isUnique="false"/>
+                <Property Name="Created_at" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Upi" Type="Model.Upi" isUnique="false"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Subscriptions" EntityType="Model.Subscription"/>
+                <EntitySet Name="Payments" EntityType="Model.Payment"/>
+            </EntityContainer>
+            <ComplexType Name="Upi">
+                <Property Name="Payer_account_type" Type="Edm.String" isUnique="false"/>
+                <Property Name="Vpa" Type="Edm.String" isUnique="false"/>
+                <Property Name="Flow" Type="Edm.String" isUnique="false"/>
+            </ComplexType>
+            <ComplexType Name="Card">
+                <Property Name="Emi" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Entity" Type="Edm.String" isUnique="false"/>
+                <Property Name="Id" Type="Edm.String" isUnique="false"/>
+                <Property Name="Iin" Type="Edm.String" isUnique="false"/>
+                <Property Name="International" Type="Edm.Boolean" isUnique="false"/>
+                <Property Name="Issuer" Type="Edm.String" isUnique="false"/>
+                <Property Name="Last4" Type="Edm.String" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Network" Type="Edm.String" isUnique="false"/>
+                <Property Name="Sub_type" Type="Edm.String" isUnique="false"/>
+                <Property Name="Type" Type="Edm.String" isUnique="false"/>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
