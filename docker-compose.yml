@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   reactui:
-    container_name: reactui_${project_artifact_id_container}
+    container_name: reactui_STS_container
     build:
       context: .
     environment:
